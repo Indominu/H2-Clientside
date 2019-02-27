@@ -1,3 +1,5 @@
+USE employees;
+
 DELIMITER //;
 /*************************** salaries lookup ***************************************/
 DROP PROCEDURE IF EXISTS search;
