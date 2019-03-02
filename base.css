@@ -11,6 +11,28 @@ input
 {
  border-radius: 0.5vmax;
 }
+
+.modal-dialog{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+button {
+    display:inline-table;
+    border:0.1vmax solid silver;
+    width:15vw;height:7vh;
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.5vmax;
+    border-radius: 25vmax;
+    padding-top:0.5vh;
+    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(100,100,100,1));
+}
+
+button:hover {
+    border:0.1vmax solid green;
+}
+
 .button
 {
     display:inline-table;

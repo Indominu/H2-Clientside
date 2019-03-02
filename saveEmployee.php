@@ -1,5 +1,5 @@
 <?php
-    include "conn.php";
+    include 'Connect.php';
     $newEmp=$_POST['newEmp'];
     $emp_no=$_POST['emp_no'];
     $first_name=$_POST['first_name'];

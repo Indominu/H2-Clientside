@@ -1,6 +1,6 @@
 <?php
- include "conn.php";
- if (isset($_GET['emp_no'])) {$emp_no=$_GET['emp_no'];$newEmp="FALSE";} else {$emp_no="";$newEmp="TRUE";}
+include 'Connect.php';
+ if (isset($empno)) {$emp_no=$empno;$newEmp="FALSE";} else {$emp_no="";$newEmp="TRUE";}
  //$emp_no="1";$newEmp="FALSE"; // debug
 
  $first_name="";
@@ -93,7 +93,7 @@
           <div id="formular" style="display:block:border;0.1vmax solid silver;width:99%;height:60vh;">&nbsp;</div>
           <div id="buttons" style="display:block:border;0.1vmax solid silver;width:99%;height:5vh;">
             <div class="button" id="save"   onclick="handleForm('save')">Save</div>
-            <div class="button" id="cancel" onclick="handleForm('cancel')">Cancel</div>
+            <div class="button" id="cancel" onclick="handleForm('cancel')" data-dismiss="modal">Cancel</div>
           </div>
         </form>
     </body>
@@ -195,4 +195,4 @@
           }
         }
     </script>
-</html> 
+</html>
