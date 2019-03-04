@@ -15,24 +15,12 @@
             <input type="text" id="last_name" name="last_name" placeholder="Last Name:">
             <button type="button" id="Search">Search</button>
             <button type="button" id="Delete">Delete</button>
-            <button type="button" data-toggle="modal" data-target="#alterEmp" name="alterEmp">Alter</button>
-            <button type="button" data-toggle="modal" data-target="#addEmp">Add</button><br>
+            <button type="button" id="add">Add</button><br>
             <button type="button" id="Comfirm" class="deleteAction" style="display: none;">Comfirm</button>
             <button type="button" id="Cancel" class="deleteAction" style="display: none;">Cancel</button><br>
             <ul id="List" style="width: 20%;"></ul>
-            <div id="alterEmp" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="appendAlterEmp"> 
-                    </div>
-                </div>
-            </div>
-            <div id="addEmp" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="appendAddEmp">
-                        <?php include 'employeeform.php';?>
-                    </div>
-                </div>
-            </div>
+
+            <iframe id="iform" src="employeeform.php" style="background-color:white;position:absolute;top:10vh;left:16vw;display:none;width:60vw;height:50vh;" scrolling="no"></form>          
 
     </body>
 </html> 

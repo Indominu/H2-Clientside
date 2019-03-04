@@ -1,8 +1,7 @@
 <?php
 include 'Connect.php';
- if (isset($empno)) {$emp_no=$empno;$newEmp="FALSE";} else {$emp_no="";$newEmp="TRUE";}
+ if (isset($_GET['emp_no'])) {$emp_no=$_GET['emp_no'];$newEmp="FALSE";} else {$emp_no="";$newEmp="TRUE";}
  //$emp_no="1";$newEmp="FALSE"; // debug
-
  $first_name="";
  $last_name="";
  $birth_date="";
@@ -90,10 +89,10 @@ include 'Connect.php';
           <input type='text' name='salarychanged' id='salarychanged' style='display:none' value='FALSE'>
           <input type='text' name='e_deptchanged' id='e_dept_nochanged' style='display:none' value='FALSE'>
           <input type='text' name='m_deptchanged' id='m_dept_nochanged' style='display:none' value='FALSE'>
-          <div id="formular" style="display:block:border;0.1vmax solid silver;width:99%;height:60vh;">&nbsp;</div>
+          <div id="formular" style="display:block:border;0.1vmax solid silver;width:99%;height:80vh;">&nbsp;</div>
           <div id="buttons" style="display:block:border;0.1vmax solid silver;width:99%;height:5vh;">
-            <div class="button" id="save"   onclick="handleForm('save')">Save</div>
-            <div class="button" id="cancel" onclick="handleForm('cancel')" data-dismiss="modal">Cancel</div>
+            <div class="button" id="save"   style="height:8vh;padding-top:2vh;" onclick="handleForm('save')">Save</div>
+            <div class="button" id="cancel" style="height:8vh;padding-top:2vh;" onclick="handleForm('cancel')">Cancel</div>
           </div>
         </form>
     </body>
@@ -191,7 +190,7 @@ include 'Connect.php';
 
           if (action=="cancel")
           {
-              
+             parent.document.getElementById("iform").style.display="none"; 
           }
         }
     </script>

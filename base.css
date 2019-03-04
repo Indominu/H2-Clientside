@@ -27,6 +27,7 @@ button {
     border-radius: 25vmax;
     padding-top:0.5vh;
     background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(100,100,100,1));
+    cursor:pointer;
 }
 
 button:hover {
@@ -49,4 +50,24 @@ button:hover {
 .button:hover
 {
     border:0.1vmax solid green;
+}
+
+.deleteAction
+{
+    display:inline-table;
+}
+.nameLine
+{
+    display:inline-table;
+    cursor:pointer;
+}
+
+.nameLine:hover
+{
+ background-color:gray;   
+}
+
+li 
+{
+padding:0 0 0 0;
 }
