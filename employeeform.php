@@ -172,7 +172,12 @@ include 'Connect.php';
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() 
             {
-            if (this.readyState == 4 && this.status == 200) document.getElementById("save").innerHTML = this.responseText;
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                    document.getElementById("save").innerHTML = this.responseText;
+                    parent.document.getElementById("iform").style.display="none";
+                    parent. DisplaySearch();
+                }
             }
             xmlhttp.open("POST","saveEmployee.php",true);
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -184,7 +189,7 @@ include 'Connect.php';
             for (i=0;i<fields.length;i++)
              options+=fields[i].name+"="+fields[i].value+"&";
             xmlhttp.send(options);
-
+            
             //document.getElementById("form").submit();
           }
 
