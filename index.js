@@ -13,7 +13,11 @@ $(document).ready(() => {
     });
 
     $('ul').on('click', 'input', function() {
-        checkBoxArr.push(this.id);
+        checkBoxArr.push(this.id); 
+        /*
+        else { console.log("2"); checkBoxArr.splice(checkBoxArr.indexOf(this.id), 1); }
+        //if($(this.id).prop('checked', false)) { console.log(this.id); checkBoxArr.splice(checkBoxArr.indexOf(this.id), 1); }*/
+
     });
 
     $("#Cancel").click(() => {

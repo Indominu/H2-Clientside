@@ -21,8 +21,12 @@ if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
 
     $firstname = str_replace(" ", "", $firstname);
     $lastname = str_replace(" ", "", $lastname);
-
-    $sql = "SELECT * FROM employees WHERE first_name LIKE '$firstname' AND last_name LIKE '$lastname' LIMIT 2000;";
+    
+    $sql = ("SELECT E.emp_no, birth_date, hire_date, gender, first_name, last_name, title, salary FROM employees E
+    INNER JOIN titles T ON E.emp_no = T.emp_no
+    INNER JOIN salaries S ON E.emp_no = S.emp_no
+    WHERE E.first_name LIKE 'P%' AND E.last_name LIKE 'B%' AND S.to_date = (SELECT MAX(to_date) FROM salaries) AND T.to_date = (SELECT MAX(to_date) FROM titles)
+    LIMIT 2000;");
 
     $result = mysqli_query($conn, $sql);
 
@@ -31,7 +35,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
         while ($row = mysqli_fetch_assoc($result)) {
     
             // add each row returned into an array
-            $listArr[] = array($row['emp_no'], $row['first_name'], $row['last_name'], $row['gender']);
+            $listArr[] = array($row['emp_no'], $row['birth_date'], $row['hire_date'], $row['gender'], $row['first_name'], $row['last_name'], $row['title'], $row['salary']);
+
         }
 
     } else {
@@ -52,12 +57,17 @@ if(isset($_POST['jsonData'])) {
 
         $arrLength = count($data);
         for ($i = 0; $i < $arrLength; $i++) {
-            if ($i == ($arrLength-1)) { $emp = $emp."emp_no = ".$data[$i]; }
-            else { $emp = "".$emp."emp_no = ".$data[$i]." OR "; }
+            if ($i == ($arrLength-1)) { $emp = $emp."E.emp_no = ".$data[$i]; }
+            else { $emp = "".$emp."E.emp_no = ".$data[$i]." OR "; }
         }
-    
 
-    $sql = "DELETE FROM employees WHERE ".$emp.";";
+    $sql = ("DELETE E,T,S,D FROM employees E
+    INNER JOIN titles T ON E.emp_no = T.emp_no
+    INNER JOIN salaries S ON E.emp_no = S.emp_no
+    INNER JOIN  dept_emp D ON E.emp_no = D.emp_no
+    LEFT JOIN dept_manager DM ON E.emp_no = DM.emp_no
+    WHERE ".$emp.";");
+
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
