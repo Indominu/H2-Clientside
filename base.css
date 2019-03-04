@@ -6,6 +6,19 @@ body
     height:100vh;
     overflow:hidden;
 }
+
+.banner
+{
+    width:100vw;
+    height:10vh;
+    margin-top:2vh;
+    margin-bottom:2vh;
+    background-image: linear-gradient(to bottom right, rgba(100,100,100,1), rgba(0,0,0,1));
+    color:silver;
+    font-size:3vmax;
+    padding-left:3vw;
+}
+
 div
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -20,18 +33,10 @@ input
     min-height: 100%;
 }
 
-#List {
-    border:0.1vmax solid silver;
-    width:50vw;
-    height:80vh;
-    overflow-x:hidden;
-    font-size:2vmax;
-}
-
 button {
     display:inline-table;
     border:0.1vmax solid silver;
-    width:15vw;height:7vh;
+    width:15vw;height:5vh;
     text-align:center;
     font-family: Arial, Helvetica, sans-serif;
     font-size:1.5vmax;
@@ -54,7 +59,7 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     font-size:1.5vmax;
     border-radius: 25vmax;
-    padding-top:0.5vh;
+    padding-top:0vh;
     background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(100,100,100,1));
 }
 
@@ -81,4 +86,15 @@ button:hover {
 li 
 {
 padding:0 0 0 0;
+}
+
+.title
+{
+    position:relative;
+    border:0.1vmax solid silver;
+    width:10vw;
+    height:4vh;
+    display:inline-table;
+    margin:0 0 0 0;
+    text-align:center;
 }

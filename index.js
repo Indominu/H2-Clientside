@@ -1,5 +1,5 @@
-var checkBoxArr = [];
-var searchPra;
+checkBoxArr = [];
+searchPra="";
 
 $(document).ready(() => {
     
@@ -46,7 +46,6 @@ $(document).ready(() => {
             }
         });
     });
- 
 });
 
 function DisplaySearch() {
@@ -86,4 +85,3 @@ function DisplaySearch() {
         }
     });
 }
-
