@@ -9,16 +9,16 @@
         <script src="index.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
-    <body>
+    <body> 
 
             <input type="text" id="first_name" name="first_name" placeholder="First Name:">
             <input type="text" id="last_name" name="last_name" placeholder="Last Name:">
             <button type="button" id="Search">Search</button>
             <button type="button" id="Delete">Delete</button>
             <button type="button" id="add">Add</button><br>
+            <ul id="List" style="border:0.1vmax solid silver;width:50vw;height:80vh;overflow-x:hidden;font-size:2vmax;"></ul>
             <button type="button" id="Comfirm" class="deleteAction" style="display: none;">Comfirm</button>
             <button type="button" id="Cancel" class="deleteAction" style="display: none;">Cancel</button><br>
-            <ul id="List" style="width: 20%;"></ul>
 
             <iframe id="iform" src="employeeform.php" style="background-color:white;position:absolute;top:10vh;left:16vw;display:none;width:60vw;height:50vh;" scrolling="no"></form>          
 
