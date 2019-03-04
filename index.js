@@ -13,14 +13,11 @@ $(document).ready(() => {
     });
 
     $('ul').on('click', 'input', function() {
-        if ($('this.checkbox_check').is(':checked')) {
-            
+        if ($(this).is(':checked')) {
+            checkBoxArr.push(this.id); 
+        } else {
+            checkBoxArr.splice(checkBoxArr.indexOf(this.id), 1);
         }
-        checkBoxArr.push(this.id); 
-        /*
-        else { console.log("2"); checkBoxArr.splice(checkBoxArr.indexOf(this.id), 1); }
-        //if($(this.id).prop('checked', false)) { console.log(this.id); checkBoxArr.splice(checkBoxArr.indexOf(this.id), 1); }*/
-
     });
 
     $("#Cancel").click(() => {
@@ -77,11 +74,11 @@ function DisplaySearch() {
                 //document.getElementById(listFromPhp[i][0]).appendChild(input);
                 */
                var div = document.createElement("div");
-               div.setAttribute('id', listFromPhp[i][0]);
+               div.setAttribute('id', listFromPhp[i][2]);
                div.setAttribute('style', "white-space:nowrap");
                div.setAttribute('class', "testClass");
-               html="&nbsp;<input id='"+listFromPhp[i][0]+"' type='checkbox' class='deleteAction' style='display:none'>";
-               html+="&nbsp;<div id='"+listFromPhp[i][0]+"' class='nameLine' >"+listFromPhp[i].toString().replace(/\,/g,' ')+"</div>";
+               html="&nbsp;<input id='"+listFromPhp[i][2]+"' type='checkbox' class='deleteAction' style='display:none'>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i].toString().replace(/\,/g,' ')+"</div>";
 
                div.innerHTML=html;
                document.getElementById("List").appendChild(div);
