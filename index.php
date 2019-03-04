@@ -16,7 +16,7 @@
             <button type="button" id="Search">Search</button>
             <button type="button" id="Delete">Delete</button>
             <button type="button" id="add">Add</button><br>
-            <ul id="List" style="border:0.1vmax solid silver;width:50vw;height:80vh;overflow-x:hidden;font-size:2vmax;"></ul>
+            <ul id="List"></ul>
             <button type="button" id="Comfirm" class="deleteAction" style="display: none;">Comfirm</button>
             <button type="button" id="Cancel" class="deleteAction" style="display: none;">Cancel</button><br>
 

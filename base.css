@@ -20,6 +20,14 @@ input
     min-height: 100%;
 }
 
+#List {
+    border:0.1vmax solid silver;
+    width:50vw;
+    height:80vh;
+    overflow-x:hidden;
+    font-size:2vmax;
+}
+
 button {
     display:inline-table;
     border:0.1vmax solid silver;

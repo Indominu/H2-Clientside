@@ -13,6 +13,9 @@ $(document).ready(() => {
     });
 
     $('ul').on('click', 'input', function() {
+        if ($('this.checkbox_check').is(':checked')) {
+            
+        }
         checkBoxArr.push(this.id); 
         /*
         else { console.log("2"); checkBoxArr.splice(checkBoxArr.indexOf(this.id), 1); }
