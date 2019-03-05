@@ -9,7 +9,7 @@
     <body> 
         <script src="index.js"></script>
         <div class="banner" >Employee Management</div>
-        <div class="banner" style="position:absolute;top:91vh;height:3vh;"></div>
+        <div class="banner" style="position:absolute;top:92vh;height:3vh;"></div>
         <div style="margin-left:3vw;" >
             <input type="text" id="first_name" name="first_name" placeholder="First Name:" style="width:15vw;">
             <input type="text" id="last_name" name="last_name" placeholder="Last Name:" style="width:15vw;">

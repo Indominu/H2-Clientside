@@ -29,14 +29,14 @@ input
 }
 
 ul {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     margin-left:3vw;
     top:19.1vh;
     padding: 0;
     border: 0.1vmax solid silver;
     width: 91vw;
-    height: 73vh;
+    height: 69vh;
     overflow-x: hidden;
     font-size: 1.5vmax;
 }
