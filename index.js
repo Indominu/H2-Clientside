@@ -2,7 +2,7 @@ checkBoxArr = [];
 searchPra="";
 
 $(document).ready(() => {
-    
+
     $("#Search").click(() => {
         searchPra = { "firstname": $("#first_name").val(), "lastname": $("#last_name").val() };
         DisplaySearch();
@@ -10,6 +10,8 @@ $(document).ready(() => {
 
     $("#Delete").click(() => {
         $(".deleteAction").show();
+        $("#save").show();
+        $("#cancel").show();
     });
 
     $('ul').on('click', 'input', function() {
@@ -20,8 +22,10 @@ $(document).ready(() => {
         }
     });
 
-    $("#Cancel").click(() => {
+    $("#cancel").click(() => {
         $(".deleteAction").hide();
+        $("#save").hide();
+        $("#cancel").hide();
     });
 
     $('ul').on('click', '.nameLine', function() {
@@ -34,13 +38,15 @@ $(document).ready(() => {
         document.getElementById("iform").src="employeeform.php";
     });
 
-    $("#Comfirm").click(() => {
+    $("#save").click(() => {
         $.ajax({
             type: "POST",
             url: "search&destroy.php",
             data:  { "jsonData": JSON.stringify(checkBoxArr) },
             success: (res) => {
                 $(".deleteAction").hide();
+                $("#save").hide();
+                $("#cancel").hide();
                 checkBoxArr.length = 0;
                 DisplaySearch();
             }
@@ -57,27 +63,20 @@ function DisplaySearch() {
             var listFromPhp = JSON.parse(res);
             $('.testClass').remove();
             for (var i = 0; i < listFromPhp.length; i+=1) {
-                /*
-                var div = document.createElement("div");
-                var li = document.createElement("li");
-                var input = document.createElement("input");
-                li.innerHTML = listFromPhp[i].toString().replace(/\,/g,' ');
-                li.setAttribute('id', listFromPhp[i][0]);
-                li.setAttribute('class', 'testClass');
-                input.setAttribute('type', 'checkbox');
-                input.setAttribute('id', listFromPhp[i][0]);
-                input.setAttribute('style', 'display: none;');
-                input.setAttribute('class', 'deleteAction');
-                document.getElementById("List").appendChild(div);
-                document.getElementById("List").appendChild(li);
-                //document.getElementById(listFromPhp[i][0]).appendChild(input);
-                */
                var div = document.createElement("div");
                div.setAttribute('id', listFromPhp[i][2]);
                div.setAttribute('style', "white-space:nowrap");
                div.setAttribute('class', "testClass");
                html="&nbsp;<input id='"+listFromPhp[i][2]+"' type='checkbox' class='deleteAction' style='display:none'>";
-               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][0].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][1].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][2].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][3].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][4].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][5].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][6].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' >"+listFromPhp[i][7].toString().replace(/\,/g,' ')+"</div>";
+
 
                div.innerHTML=html;
                document.getElementById("List").appendChild(div);

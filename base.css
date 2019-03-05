@@ -10,7 +10,7 @@ body
 .banner
 {
     width:100vw;
-    height:10vh;
+    height:8vh;
     margin-top:2vh;
     margin-bottom:2vh;
     background-image: linear-gradient(to bottom right, rgba(100,100,100,1), rgba(0,0,0,1));
@@ -28,44 +28,44 @@ input
  border-radius: 0.5vmax;
 }
 
-.modal-dialog{
-    min-width: 100%;
-    min-height: 100%;
-}
-
-button {
-    display:inline-table;
-    border:0.1vmax solid silver;
-    width:15vw;height:5vh;
-    text-align:center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:1.5vmax;
-    border-radius: 25vmax;
-    padding-top:0.5vh;
-    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(100,100,100,1));
-    cursor:pointer;
-}
-
-button:hover {
-    border:0.1vmax solid green;
+ul {
+    position: fixed;
+    bottom: 0;
+    margin-left:3vw;
+    padding: 0;
+    border: 0.1vmax solid silver;
+    width: 91vw;
+    height: 73vh;
+    overflow-x: hidden;
+    font-size: 1.5vmax;
 }
 
 .button
 {
     display:inline-table;
-    border:0.1vmax solid silver;
-    width:20vw;height:4.5vh;
+    border:0.2vmax linear-gradient(to bottom right,  rgba(0,0,0,1), rgba(100,100,100,1));
+    width:7vw;height:5vh;
     text-align:center;
     font-family: Arial, Helvetica, sans-serif;
+    cursor:pointer;
+    color:silver;
     font-size:1.5vmax;
-    border-radius: 25vmax;
+    border-radius: 0.8vw;
     padding-top:0vh;
-    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(100,100,100,1));
+    background-image: linear-gradient(to bottom right,  rgba(0,0,0,1), rgba(100,100,100,1));
 }
 
 .button:hover
 {
-    border:0.1vmax solid green;
+    border:0.2vmax solid silver;
+}
+
+#save:hover {
+    border:0.2vmax solid green;
+}
+
+#cancel:hover {
+    border:0.2vmax solid red;
 }
 
 .deleteAction
@@ -74,8 +74,12 @@ button:hover {
 }
 .nameLine
 {
-    display:inline-table;
-    cursor:pointer;
+    display: inline-table;
+    border: 0.1vmax solid silver;
+    min-width: 9vw;
+    text-align: center;
+    height: 3vh;
+    cursor: pointer;
 }
 
 .nameLine:hover
@@ -97,4 +101,24 @@ padding:0 0 0 0;
     display:inline-table;
     margin:0 0 0 0;
     text-align:center;
+}
+
+::-webkit-scrollbar {
+    width: 1vw;
+    height: 5vh;
+}
+
+::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(200,200,200,1));
+}
+   
+::-webkit-scrollbar-thumb {
+    border-radius: 1vmax;
+    background-image: linear-gradient(to bottom right,  rgba(0,0,0,1), rgba(100,100,100,1));
+    border:0.1vmax linear-gradient(to bottom right,  rgba(0,0,0,1), rgba(100,100,100,1));
+
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    border:0.1vmax solid silver;
 }
