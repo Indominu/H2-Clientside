@@ -18,19 +18,19 @@
             <button class="button" type="button" id="save" style="display: none;">Comfirm</button>
             <button class="button" type="button" id="cancel" style="display: none;">Cancel</button><br>
         </div>
-        <div style="padding-left:3vw;margin-top:1vh;">
+        <div style="padding-left:3.4vw;margin-top:1vh;">
             <div class="title" style="width:5vw">&nbsp;</div>
-            <div class="title">Department</div>
-            <div class="title">Title</div>
-            <div class="title">Emp No</div>
-            <div class="title">Name</div>
-            <div class="title">Birth Date</div>
-            <div class="title">Hire Date</div>
-            <div class="title">Salary</div>
+            <div class="title" style="width:10.5vw">Department</div>
+            <div class="title" style="width:11vw">Title</div>
+            <div class="title" style="width:9vw">Emp No</div>
+            <div class="title" style="width:23vw">Name</div>
+            <div class="title" style="width:9vw">Birth Date</div>
+            <div class="title" style="width:9vw">Hire Date</div>
+            <div class="title" style="width:9vw">Salary</div>
         </div>
         <ul id="List"></ul>
 
-        <iframe id="iform" src="employeeform.php" style="background-color:white;position:absolute;top:10vh;left:16vw;display:none;width:60vw;height:50vh;" scrolling="no"></form>          
+        <iframe id="iform" src="employeeform.php" style="background-color:white;position:absolute;top:15vh;left:16vw;display:none;width:60vw;height:50vh;" scrolling="no"></form>          
 
     </body>
 </html> 

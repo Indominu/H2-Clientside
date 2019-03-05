@@ -32,6 +32,7 @@ ul {
     position: fixed;
     bottom: 0;
     margin-left:3vw;
+    top:19.1vh;
     padding: 0;
     border: 0.1vmax solid silver;
     width: 91vw;
@@ -77,12 +78,15 @@ ul {
     display: inline-table;
     border: 0.1vmax solid silver;
     min-width: 9vw;
-    text-align: center;
+    text-align: left;
     height: 3vh;
     cursor: pointer;
+    margin:0 0 0 -0.5vw;
+    overflow:hidden;
+    font-size:1.5vmax;
 }
 
-.nameLine:hover
+.testClass:hover
 {
  background-color:gray;   
 }
@@ -99,7 +103,7 @@ padding:0 0 0 0;
     width:10vw;
     height:4vh;
     display:inline-table;
-    margin:0 0 0 0;
+    margin:0 0 0 -0.4vw;
     text-align:center;
 }
 
