@@ -21,7 +21,7 @@
         <div style="padding-left:3.4vw;margin-top:1vh;">
             <div class="title" style="width:5vw">&nbsp;</div>
             <div class="title" style="width:10.5vw">Department</div>
-            <div class="title" style="width:11vw">Title</div>
+            <div class="title" style="width:13vw">Title</div>
             <div class="title" style="width:9vw">Emp No</div>
             <div class="title" style="width:23vw">Name</div>
             <div class="title" style="width:9vw">Birth Date</div>

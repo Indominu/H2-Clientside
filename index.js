@@ -69,7 +69,7 @@ function DisplaySearch() {
                div.setAttribute('class', "testClass");
                html="&nbsp;<input id='"+listFromPhp[i][2]+"' type='checkbox' class='deleteAction' style='display:none'>";
                html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' style='width:15.2vw;'>"+listFromPhp[i][0].toString().replace(/\,/g,' ')+"</div>";
-               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' style='width:11vw;'>"+listFromPhp[i][1].toString().replace(/\,/g,' ')+"</div>";
+               html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' style='width:13vw;'>"+listFromPhp[i][1].toString().replace(/\,/g,' ')+"</div>";
                html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' style='width:6vw;text-align: center;'>"+listFromPhp[i][2].toString().replace(/\,/g,' ')+"</div>";
                html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' style='width:23vw;'>"+listFromPhp[i][3]+" "+listFromPhp[i][4]+"</div>";
                html+="&nbsp;<div id='"+listFromPhp[i][2]+"' class='nameLine' style='width:9vw;text-align: center;'>"+listFromPhp[i][5].toString().replace(/\,/g,' ')+"</div>";
