@@ -29,12 +29,13 @@ include 'Connect.php';
 
  if ($emp_no!="")
  {
-    $sql="SELECT * FROM employees ";  
-    $sql.="INNER JOIN (SELECT title,MAX(from_date) AS tit_from_date, MAX(to_date) AS tit_to_date FROM titles  WHERE emp_no='".$emp_no."') AS titles ";
-    $sql.="INNER JOIN (SELECT salary,MAX(from_date) AS sal_from_date, MAX(to_date) AS sal_to_date FROM salaries  WHERE emp_no='".$emp_no."') AS salaries ";
-    $sql.="INNER JOIN (SELECT dept_no AS e_dept_no,MAX(from_date) AS e_dept_from_date, MAX(to_date) AS e_dept_to_date FROM dept_emp  WHERE emp_no='".$emp_no."') AS dept_emp "; 
-    $sql.="INNER JOIN (SELECT dept_no AS m_dept_no,MAX(from_date) AS m_dept_from_date, MAX(to_date) AS m_dept_to_date FROM dept_manager  WHERE emp_no='".$emp_no."') AS dept_manager "; 
-    $sql.="WHERE employees.emp_no='".$emp_no."'";
+    $sql = "SELECT * FROM employees  
+    INNER JOIN (SELECT title,from_date AS tit_from_date, to_date AS tit_to_date FROM titles     WHERE emp_no='".$emp_no."') AS titles
+    INNER JOIN (SELECT salary,from_date AS sal_from_date, to_date AS sal_to_date FROM salaries  WHERE emp_no='".$emp_no."') AS salaries
+    INNER JOIN (SELECT dept_no AS e_dept_no,from_date AS e_dept_from_date, to_date AS e_dept_to_date FROM dept_emp  WHERE emp_no='".$emp_no."') AS dept_emp
+    INNER JOIN (SELECT dept_no AS m_dept_no,from_date AS m_dept_from_date, max(to_date) AS m_dept_to_date FROM dept_manager  WHERE emp_no='".$emp_no."') AS dept_manager 
+    WHERE employees.emp_no='".$emp_no."' AND sal_to_date = (SELECT MAX(to_date) FROM salaries) AND tit_to_date = (SELECT MAX(to_date) FROM titles) AND e_dept_to_date = (SELECT MAX(to_date) FROM dept_emp)
+    LIMIT 1;";
     $result = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
     $row=$result->fetch_assoc();
 

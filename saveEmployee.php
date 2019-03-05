@@ -19,6 +19,7 @@
     $m_dept_no=$_POST['m_dept_no'];
     $m_dept_from_date=date('Y-m-d',strtotime($_POST['m_dept_from_date']));
     $m_dept_to_date=date('Y-m-d',strtotime($_POST['m_dept_to_date']));
+    echo $_POST['e_deptchanged'];
     if ($newEmp=="TRUE") // ************** new employee *************
     {
         if ($emp_no!="")
@@ -34,9 +35,24 @@
             if ($m_dept_no!="")
                 insertSQL("dept_manager","emp_no,dept_no,from_date,to_date","'".$emp_no."', '".$m_dept_no."', '".$m_dept_from_date."','".$m_dept_to_date."'");
         }
+        
     }else // ****************** edit old Employee ***********************
     {
-        updateSQL("employees",$emp_no,"first_name='".$first_name."',last_name='".$last_name."',birth_date='".$birth_date."',gender='".$gender."',hire_date='".$hire_date."'");
+        
+        if ($_POST['empchanged']=="TRUE")
+            updateSQL("employees",$emp_no,"first_name='".$first_name."',last_name='".$last_name."',birth_date='".$birth_date."',gender='".$gender."',hire_date='".$hire_date."'");
+    
+        if ($_POST['titlechanged']=="TRUE")
+            insertSQL("titles","emp_no,title,from_date,to_date","'".$emp_no."', '".$title."', '".$tit_from_date."','".$tit_to_date."'");
+
+        if ($_POST['salarychanged']=="TRUE")
+            insertSQL("salaries","emp_no,salary,from_date,to_date","'".$emp_no."', '".$salary."', '".$sal_from_date."','".$sal_to_date."'");
+
+        if ($_POST['e_deptchanged']=="TRUE")
+            insertSQL("dept_emp","emp_no,dept_no,from_date,to_date","'".$emp_no."', '".$e_dept_no."', '".$e_dept_from_date."','".$e_dept_to_date."'");
+
+        if ($_POST['m_deptchanged']=="TRUE")
+            insertSQL("dept_manager","emp_no,dept_no,from_date,to_date","'".$emp_no."', '".$m_dept_no."', '".$m_dept_from_date."','".$m_dept_to_date."'");
     }
 
     function insertSQL($table,$columbs,$values)
