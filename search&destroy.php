@@ -27,8 +27,9 @@ if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
     INNER JOIN salaries S ON E.emp_no = S.emp_no
     INNER JOIN dept_emp DE ON E.emp_no = DE.emp_no
     INNER JOIN departments D ON D.dept_no = DE.dept_no
-    WHERE E.first_name LIKE '$firstname' AND E.last_name LIKE '$lastname' AND S.to_date = (SELECT MAX(to_date) FROM salaries) AND T.to_date = (SELECT MAX(to_date) FROM titles)
-    LIMIT 2000;");
+    WHERE E.first_name LIKE '$firstname' AND E.last_name LIKE '$lastname'
+    AND S.to_date = (SELECT MAX(to_date) FROM salaries) AND T.to_date = (SELECT MAX(to_date) FROM titles) AND DE.to_date = (SELECT MAX(to_date) FROM dept_emp)
+    LIMIT 1000;");
 
     $result = mysqli_query($conn, $sql);
 
