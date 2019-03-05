@@ -29,7 +29,7 @@
             <div class="title" style="width:9vw">Salary</div>
         </div>
         <ul id="List"></ul>
-
+        <img id="wait" src="wait.gif" style="position:absolute;top:26vh;left:35vw;width:25vw;display:none;">
         <iframe id="iform" src="employeeform.php" style="background-color:white;position:absolute;top:15vh;left:16vw;display:none;width:60vw;height:50vh;" scrolling="no"></form>          
 
     </body>

@@ -5,6 +5,7 @@ $(document).ready(() => {
 
     $("#Search").click(() => {
         searchPra = { "firstname": $("#first_name").val(), "lastname": $("#last_name").val() };
+        $("#wait").show();
         DisplaySearch();
     });
 
@@ -79,6 +80,7 @@ function DisplaySearch() {
 
                div.innerHTML=html;
                document.getElementById("List").appendChild(div);
+               $("#wait").hide();
             }
         }
     });
